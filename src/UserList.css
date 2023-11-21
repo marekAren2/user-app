@@ -1,0 +1,32 @@
+.userList form {
+    max-width: 600px;
+    /* ASK: czemu nie 80% */
+    /* max-width: 80%; */
+    border: 1px solid black;
+    padding: 30px;
+    /* ASK: co robi margin auto bo nie widac */
+    margin: auto;
+    
+}
+
+.userList form input {
+    /* ODP: rozciagnij rozmiar inputa 100% wtedy labele wpadna nad */
+    width: 100%;
+      
+}
+
+.userList form button {
+    background-color: lightblue;
+    padding: 5px 15px;
+    margin: 15px;
+    border: 0;
+    /* ODP: 1,2 x root element master = 16px wiec ten ok 19px */
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.userList form button:hover {
+    opacity: 0.8;
+    /* ASK: rusza ramka dolna? */
+    border: 1px solid lightblue
+}
