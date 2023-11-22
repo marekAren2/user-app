@@ -3,9 +3,12 @@ import './UserList.css'
 
 const UserList = () => {
         // const [username, setUserName] = useState('');
-        const [formdata, setFormData] = useState({
-            username:'',
-            email:''})
+        const [formdata, setFormData] = useState(''
+            // {
+            // username: '',
+            // email: ''
+        // }
+        )
     
     return (
        <div className="userList" >
@@ -14,7 +17,9 @@ const UserList = () => {
             <h2>: {formdata}</h2>
             <form
             onChange={(e)=>{setFormData(e.target.value);
-                console.log(e.target.value);}}
+                console.log('e.target.value :', e.target.value);
+                console.log('formdata :', formdata);
+            }}
             >
                 <label htmlFor="username" > Podaj imie swoje </label>
                 <input type="text" className="name" id="username" name="username" placeholder="username" 
@@ -24,6 +29,11 @@ const UserList = () => {
                 /> 
                 <label htmlFor="email"> User email </label>
                 <input type="email" className="email" id="email" name="email" placeholder="email" />
+                <label htmlFor="usertype"> User email </label>
+                <select className='userType' id='usertype-nie-stosujemy-myslnikow-juz' name="usertype-inny-niz-label">
+                    <option>Admin</option>
+                    <option>User</option>
+                </select>
                 <button type="submit" className="buttonSubmit" id="button">
                     Save
                 </button>

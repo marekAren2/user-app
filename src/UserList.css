@@ -30,3 +30,7 @@
     /* ASK: rusza ramka dolna? */
     border: 1px solid lightblue
 }
+
+.userList form select  {
+    width: 100%;
+}
