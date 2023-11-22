@@ -4,10 +4,9 @@ import './UserList.css'
 const UserList = () => {
         // const [username, setUserName] = useState('');
         const [formdata, setFormData] = useState(
-            {
-            username: '',
-            email: ''
-        }
+            {username: '',
+             email: ''
+            }
         )
     
     return (
