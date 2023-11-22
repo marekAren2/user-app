@@ -3,11 +3,11 @@ import './UserList.css'
 
 const UserList = () => {
         // const [username, setUserName] = useState('');
-        const [formdata, setFormData] = useState(''
-            // {
-            // username: '',
-            // email: ''
-        // }
+        const [formdata, setFormData] = useState(
+            {
+            username: '',
+            email: ''
+        }
         )
     
     return (
