@@ -30,6 +30,8 @@ const UserList = () => {
         console.log('formData :', formData)
         // w 29:27
         // ASK: kluczowanie
+        // ASK: moze byc funkcja bez nawiasu? nie zmienia wyniku nie wyrzuca bledu
+        // SK: dlaczego wczesniejsza wartosc?
         setFormData(prevDataForm=>{
             // ... to kopia poprzedniego stanu 29:58 rozbudowana o
             // 30:58 nadpisz mi pole o tym kluczu [username] ktory odpowiada -
