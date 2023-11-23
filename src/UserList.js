@@ -55,8 +55,9 @@ const UserList = () => {
         // e.preventDefult();
         e.preventDefault();
         console.log("🚀 ~ file: UserList.js:57 ~ setUser ~ e:", e)
-
-        setUsers(users.concat({...formData, id: new Date()}))
+        // ASK zmienilem Date() Date.now() nie pomoglo na error w wyswietlenie w pseudoHtml
+        // setUsers(users.concat({...formData, id: new Date()}))
+        setUsers(users.concat({...formData, id: Date.now()}))
     }
 
     const removeUser = (id) => {
@@ -130,12 +131,15 @@ const UserList = () => {
             {/* // ASk co robi map? */}
             {users.map((user) => {
                 return (
-                    <div className="userItems" key={user.id}>
+                    <div className="userItems" key={user.id}
+                    //ASK bez klamry moze byc czy musi?
+                    onClick={()=>removeUser(user.id)}
+                    >
                         {/* // ASK moge w tym momencie wyswietlic cos w konsoli jak?</div> */}
                         {/* {console.log(user.id)} */}
                         {/* ASK: czemu bez nawiasu nie działa? w JS dzialalo? */}
                         {/* <h3>{user.id.toLocalString() }</h3> */}
-                        <h3>{(user.id).toLocalString() }</h3>
+                        <h3>{(user.id).getTime() }</h3>
                         <p>{user.username}</p>
                         <p>{user.email}</p>
                         <p>{user.usertype}</p>
