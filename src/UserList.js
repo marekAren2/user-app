@@ -24,7 +24,7 @@ const UserList = () => {
         // console.log('formdata.username :', formdata.username);
         // }
         // z 28:34 video
-        const nameNew = target.name
+        const nameFromFormField = target.name
         console.log("🚀 ~ file: UserList.js:23 ~ handleInputChange ~ nameNew:", nameNew);
         // 32:17
         console.log('formData :', formData)
@@ -38,7 +38,7 @@ const UserList = () => {
         //- nazwie atrybutu name ! nadpisz go wartością target.value
             // 31:26 formdata na prevDataForm name nie przejmowac sie
         // return {...prevDataForm, [name]: target.value };
-        return { ...prevDataForm, [name]: target.value };
+        return { ...prevDataForm, [nameFromFormField]: target.value };
         })
                
     };
