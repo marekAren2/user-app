@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./UserList.css";
 
 const UserList = () => {
+    let user={a :5,b: 5}
   // const [username, setUserName] = useState('');
   const [formData, setFormData] = useState({
     username: "",
@@ -12,7 +13,7 @@ const UserList = () => {
     usertype: "Admin",
   });
   
-  // ODP: pusta tablica w useState
+  // ODP: pusta tablica w useState nasz stan uzyty patrz ok 18:
   const [users,setUsers] = useState([]);
   console.log("🚀 ~ file: UserList.js:17 ~ users:", users)
 
@@ -62,6 +63,15 @@ const UserList = () => {
 
     const removeUser = (id) => {
         console.log(id);
+        //okolo 17: v13
+        const filteredUsers = users.filter(user=>user.id !==id)
+        console.log("🚀 ~ file: UserList.js:68 ~ removeUser ~ filteredUsers:", filteredUsers)
+        // ODP: okolo 18:20 zfiltrowana liste wrzucmy do stanu naszego!!
+        ODP: setterem ustawia stan users na liste kolekcje bez id kliknietego ok 19:15 koniec
+        setUsers(filteredUsers);
+
+
+        
 
     }
 
@@ -125,10 +135,11 @@ const UserList = () => {
             <button type="submit" className="buttonSubmit" id="button">
                 Save
             </button>
-    </form> 
+        </form> 
 
       <div className="list">
-            {/* // ASk co robi map? */}
+            {/* // ASk co robi map? ODP dla kazdego elementu w users wykonuje f a tu 
+            po return geberuje pseudoHtml z wstawionymi naszymi danymi dla kazdego id*/}
             {users.map((user) => {
                 return (
                     <div className="userItems" key={user.id}
@@ -139,7 +150,7 @@ const UserList = () => {
                         {/* {console.log(user.id)} */}
                         {/* ASK: czemu bez nawiasu nie działa? w JS dzialalo? */}
                         {/* <h3>{user.id.toLocalString() }</h3> */}
-                        <h3>{(user.id).getTime() }</h3>
+                        {/* <h3>{(user.id).getTime() }</h3> */}
                         <p>{user.username}</p>
                         <p>{user.email}</p>
                         <p>{user.usertype}</p>
@@ -148,7 +159,7 @@ const UserList = () => {
                         {/* <p>{user.id}</p>  */}
                         
                     </div>
-                    );
+                );
             })}
         </div>
     </div>
