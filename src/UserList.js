@@ -130,6 +130,8 @@ const UserList = () => {
                     <p>{user.email}</p>
                     <p>{user.usertype}</p>
                     {/* ASK jak wyswietlic ponizej */}
+                    {/* ASK blad Data? */}
+                    {/* <p>{user.id}</p>  */}
                     {/* <p>{users.id}</p>  */}
                 </div>
                 );

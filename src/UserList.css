@@ -35,6 +35,14 @@
     width: 100%;
 }
 
+.userList .list {
+    border: 1px solid grey;
+    max-width: 600px;
+    /* ODP nie klei lewej: domyslnie */
+    margin: auto;
+    padding: 30px;
+}
+
 .userList .userItems {
     border: 1px solid #f0f0f0;
 }
