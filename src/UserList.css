@@ -34,3 +34,13 @@
 .userList form select  {
     width: 100%;
 }
+
+.userList .userItems {
+    border: 1px solid #f0f0f0;
+}
+
+.userList .userItems:hover {
+    border: 1px solid #f0f0f0;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    }
