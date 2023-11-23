@@ -59,6 +59,11 @@ const UserList = () => {
         setUsers(users.concat({...formData, id: new Date()}))
     }
 
+    const removeUser = (id) => {
+        console.log(id);
+
+    }
+
   console.log("formData :", formData);
 
   return (
@@ -72,71 +77,76 @@ const UserList = () => {
       {/* console.log("🚀 ~ file: UserList.js:26 ~ UserList ~ formdata:", formdata) */}
 
       <form
-      onSubmit={setUser}
-      onChange={handleInputChange}
-      >
-        <label htmlFor="username"> Podaj imie swoje </label>
-        <input
-          type="text"
-          className="name"
-          id="username"
-          name="username"
-          placeholder="username"
-          // onChange={(e)=>{setUserName(e.target.value);}}/>
-          // onChange={(e)=>{setFormData(e.target.value);
-          // console.log(e.target.value);}}
-        //   onChange={handleInputChange}
-          // ODP: w polach tekstowych to co w stanie powinno tez byc atrybucie value
-            value={formData.username}            
-        />
-        <label htmlFor="email"> User email </label>
-        <input
-        //   onChange={handleInputChange}
-          type="email"
-          className="email"
-          id="email"
-          name="email"
-          placeholder="email"
-          // ODP: w polach tekstowych to co w stanie powinno tez byc atrybucie value
-          //ASK: co to robi?
-          value={formData.email}            
-        />
-
-        <label htmlFor="usertype"> User email </label>
-        <select
-        //   onChange={handleInputChange}
-          className="userType"
-          id="usertype-nie-stosujemy-myslnikow-juz"
-          name="usertype"
-          // ODP: w polach tekstowych to co w stanie powinno tez byc atrybucie value
-          value={formData.username}            
+            onSubmit={setUser}
+            onChange={handleInputChange}
         >
-          {/* w tym przypadku 'value' musi byc bo tu nie dziala */}
-          <option value="admin">Admin</option>
-          {/* <option>Admin</option> */}
-          <option value="userek">User</option>
-        </select>
-        <button type="submit" className="buttonSubmit" id="button">
-          Save
-        </button>
-      </form>
+            <label htmlFor="username"> Podaj imie swoje </label>
+            <input
+                type="text"
+                className="name"
+                id="username"
+                name="username"
+                placeholder="username"
+                // onChange={(e)=>{setUserName(e.target.value);}}/>
+                // onChange={(e)=>{setFormData(e.target.value);
+                // console.log(e.target.value);}}
+                //   onChange={handleInputChange}
+                // ODP: w polach tekstowych to co w stanie powinno tez byc atrybucie value
+                    value={formData.username}            
+            />
+            <label htmlFor="email"> User email </label>
+            <input
+                //   onChange={handleInputChange}
+                type="email"
+                className="email"
+                id="email"
+                name="email"
+                placeholder="email"
+                // ODP: w polach tekstowych to co w stanie powinno tez byc atrybucie value
+                //ASK: co to robi?
+                value={formData.email}            
+            />
+
+            <label htmlFor="usertype"> User email </label>
+            <select
+                //   onChange={handleInputChange}
+                className="userType"
+                id="usertype-nie-stosujemy-myslnikow-juz"
+                name="usertype"
+                // ODP: w polach tekstowych to co w stanie powinno tez byc atrybucie value
+                value={formData.username}            
+                >
+                {/* w tym przypadku 'value' musi byc bo tu nie dziala */}
+                <option value="admin">Admin</option>
+                {/* <option>Admin</option> */}
+                <option value="userek">User</option>
+            </select>
+            <button type="submit" className="buttonSubmit" id="button">
+                Save
+            </button>
+    </form> 
 
       <div className="list">
-        {/* // ASk co robi map? */}
-        {users.map((user) => {
-            return (
-                <div className="userItems">
-                    <p>{user.username}</p>
-                    <p>{user.email}</p>
-                    <p>{user.usertype}</p>
-                    {/* ASK jak wyswietlic ponizej */}
-                    {/* ASK blad Data? */}
-                    {/* <p>{user.id}</p>  */}
-                    {/* <p>{users.id}</p>  */}
-                </div>
-                );
-        })}
-      </div>
+            {/* // ASk co robi map? */}
+            {users.map((user) => {
+                return (
+                    <div className="userItems" key={user.id}>
+                        {/* // ASK moge w tym momencie wyswietlic cos w konsoli jak?</div> */}
+                        {/* {console.log(user.id)} */}
+                        {/* ASK: czemu bez nawiasu nie działa? w JS dzialalo? */}
+                        {/* <h3>{user.id.toLocalString() }</h3> */}
+                        <h3>{(user.id).toLocalString() }</h3>
+                        <p>{user.username}</p>
+                        <p>{user.email}</p>
+                        <p>{user.usertype}</p>
+                        {/* ASK jak wyswietlic ponizej */}
+                        {/* ASK blad Data? */}
+                        {/* <p>{user.id}</p>  */}
+                        
+                    </div>
+                    );
+            })}
+        </div>
     </div>
   );
 };
